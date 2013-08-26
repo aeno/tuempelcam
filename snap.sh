@@ -6,15 +6,14 @@ LOGFILE="/home/pi/tuempelcam/log/$NOW.log"
 echo "Snapshotting at $NOWHUMAN" 1>> $LOGFILE
 
 if [$HOUR -ge 6 -a $HOUR -lt 20]; then
-	v4l2-stl --set-ctrl brightness=90
-	v4l2-stl --set-ctrl contrast=35
-	v4l2-stl --set-ctrl saturation=45
-	v4l2-stl --set-ctrl white_balance_temperature_auto=0
-	v4l2-stl --set-ctrl gain=80
-	v4l2-stl --set-ctrl white_balance_temperature=7560
-	v4l2-stl --set-ctrl sharpness=50
-	v4l2-stl --set-ctrl exposure_auto=1
-	v4l2-stl --set-ctrl exposure_absolute=3
+	v4l2-ctl --set-ctrl brightness=90
+	v4l2-ctl --set-ctrl contrast=35
+	v4l2-ctl --set-ctrl saturation=45
+	v4l2-ctl --set-ctrl white_balance_temperature_auto=0
+	v4l2-ctl --set-ctrl gain=80
+	v4l2-ctl --set-ctrl white_balance_temperature=7560
+	v4l2-ctl --set-ctrl sharpness=50
+	v4l2-ctl --set-ctrl exposure_auto=1
 	v4l2-ctl --set-ctrl exposure_absolute=3
 fi
 
